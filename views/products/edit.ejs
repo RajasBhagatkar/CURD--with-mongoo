@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= foundId.name %> </title>
+</head>
+<body>
+    <h1>Editing <%= foundId.name %> </h1>
+    <form action="/products/<%= foundId._id %>?_method=PUT" method="post" >
+    <input type="text" name="name" placeholder="Product Name" value="<%= foundId.name  %> " >
+    <input type="number" name="price" value="<%=foundId.price%>" placeholder="Product Price">
+    <select name="category" >
+        <option value="fruit" <%= foundId.category==='fruit' ? 'selected':''  %> >Fruit</option>
+        <option value="vegetable"<%= foundId.category==='vegetable' ? 'selected' : ''  %>>Vegetable</option>
+        <option value="dairy" <%= foundId.category==='dairy' ? 'selected' :''  %>>Dairy</option>
+    </select>
+
+    <button>Edit</button>
+    </form>
+</body>
+</html> 
